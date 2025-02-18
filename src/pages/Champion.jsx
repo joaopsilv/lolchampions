@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { fetchChampionById } from "../services/api"
+import { useChampions } from "../context/ChampionContext"
 
 const Champion = () => {
+	const { champions } = useChampions()
 	const { championId } = useParams()
 	const [champion, setChampion] = useState(null)
 
@@ -14,7 +16,16 @@ const Champion = () => {
 		loadChampion()
 	}, [championId])
 
-	if (!champion) return <p>Loading...</p>
+	if (!champion) {
+		const champion = champions.find((champ) => champ.id === championId)
+		return (
+			<div>
+				<h1>{champion.name}</h1>
+				<h2>{champion.title}</h2>
+				<p>{champion.blurb}</p>
+			</div>
+		)
+	}
 
 	return (
 		<div>

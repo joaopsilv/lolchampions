@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { fetchChampions } from "../services/api"
+import { useChampions } from "../context/ChampionContext"
 
 const Home = () => {
-	const [champions, setChampions] = useState([])
+	const { champions, loading } = useChampions()
 
-	useEffect(() => {
-		const loadChampions = async () => {
-			const data = await fetchChampions()
-			setChampions(data)
-		}
-		loadChampions()
-	}, [])
+	if (loading) return <p>Carregando campeões...</p>;
 
 	return (
 		<div>
