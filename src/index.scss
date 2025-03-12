@@ -63,7 +63,27 @@ h1 {
 	@extend .flex;
 	flex-direction: column;
 }
+
+.grid {
+	display: grid;
+}
+
 .center {
 	justify-content: center;
 	align-items: center;
+}
+
+section{
+	padding: 0px 5rem;
+}
+
+.img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+.bg-img {
+	@extend .img;
+	position: absolute;
 }

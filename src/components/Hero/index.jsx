@@ -7,6 +7,7 @@ export default function Hero() {
 			<img
 				src="src/assets/images/bg-home.jpg"
 				alt="Campeões do League of Legends"
+				className="bg-img"
 			/>
 			<h1>
 				<span>Champions</span>
