@@ -1,5 +1,5 @@
 const API_VERSION = "15.3.1"
-const BASE_URL = `https://ddragon.leagueoflegends.com/cdn/${API_VERSION}/data/pt_BR`
+const BASE_URL = `https://ddragon.leagueoflegends.com/cdn/${API_VERSION}/data/en_US`
 
 export const fetchChampions = async () => {
 	try {
@@ -7,7 +7,7 @@ export const fetchChampions = async () => {
 		const data = await response.json()
 		return Object.values(data.data)
 	} catch (error) {
-		console.error("Erro ao buscar campeões:", error)
+		console.error("Error searching for champions:", error)
 		return []
 	}
 }
@@ -18,7 +18,7 @@ export const fetchChampionById = async (championId) => {
 		const data = await response.json()
 		return data.data[championId]
 	} catch (error) {
-		console.error(`Erro ao buscar detalhes do campeão ${championId}:`, error)
+		console.error(`Error fetching champion details ${championId}:`, error)
 		return null
 	}
 }

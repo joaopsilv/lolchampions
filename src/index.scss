@@ -33,6 +33,10 @@ body {
 	background-color: var(--clr-black);
 }
 
+section{
+	padding: 0px 5rem;
+}
+
 h1 {
 	text-transform: uppercase;
 	font-family: var(--ff-heading);
@@ -71,10 +75,6 @@ h1 {
 .center {
 	justify-content: center;
 	align-items: center;
-}
-
-section{
-	padding: 0px 5rem;
 }
 
 .img {

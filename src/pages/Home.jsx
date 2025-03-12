@@ -5,7 +5,7 @@ import { useChampions } from "../context/ChampionContext"
 const Home = () => {
 	const { champions, loading } = useChampions()
 
-	if (loading) return <p>Carregando campeões...</p>
+	if (loading) return <p>Loading champions...</p>
 
 	return (
 		<>

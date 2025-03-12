@@ -6,7 +6,7 @@ export default function Hero() {
 		<section className={`flex-column center ${style.hero}`}>
 			<img
 				src="src/assets/images/bg-home.jpg"
-				alt="Campeões do League of Legends"
+				alt="League of Legends Champions"
 				className="bg-img"
 			/>
 			<h1>
