@@ -53,7 +53,8 @@
 
 @media (max-width: 1024px) {
 	.banner {
-		overflow: auto;
+		height: fit-content;
+		overflow: visible;
 		gap: 2rem;
 		.imgContainer {
 			position: relative;

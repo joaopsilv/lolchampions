@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Home from "./pages/home"
+import Layout from "./pages/Layout"
+import Home from "./pages/Home"
 import Champion from "./pages/Champion"
 import { ChampionProvider } from "./context/ChampionContext"
 
@@ -8,8 +9,10 @@ function App() {
 		<ChampionProvider>
 			<Router>
 				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/champion/:championId" element={<Champion />} />
+					<Route element={<Layout />}>
+						<Route path="/" element={<Home />} />
+						<Route path="/champion/:championId" element={<Champion />} />
+					</Route>
 				</Routes>
 			</Router>
 		</ChampionProvider>
