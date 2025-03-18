@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { fetchChampionById } from "../services/api"
 import { useChampions } from "../context/ChampionContext"
 import ChampBanner from "../components/ChampBanner"
+import Page from "./Page"
 
 const Champion = () => {
 	const { champions, loading } = useChampions()
@@ -33,9 +34,9 @@ const Champion = () => {
 	}
 
 	return (
-		<>
+		<Page title={champion.name}>
 			<ChampBanner champ={champion} />
-		</>
+		</Page>
 	)
 }
 
