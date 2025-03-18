@@ -5,7 +5,7 @@ export default function Footer() {
 	return (
 		<footer className="flex">
 			<p>
-				Dados retirados da{" "}
+				Data taken from{" "}
 				<a href="https://developer.riotgames.com/docs/lol" target="_blank">
 					Data Dragon API
 				</a>
