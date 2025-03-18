@@ -6,30 +6,63 @@ import ChampBanner from "../components/ChampBanner"
 import Page from "./Page"
 
 const Champion = () => {
-	const { champions, loading } = useChampions()
 	const { championId } = useParams()
 	const [champion, setChampion] = useState(null)
+	const [loading, setLoading] = useState(true)
+	const [error, setError] = useState(false)
+	const { champions, loading: contextLoading } = useChampions()
 
 	useEffect(() => {
 		const loadChampion = async () => {
-			const data = await fetchChampionById(championId)
-			setChampion(data)
+			try {
+				setLoading(true)
+				setError(false)
+				const data = await fetchChampionById(championId)
+				if (data) {
+					setChampion(data)
+				} else {
+					const contextChampion = champions.find(
+						(champ) => champ.id === championId
+					)
+					contextChampion ? setChampion(contextChampion) : setError(true)
+				}
+			} catch (error) {
+				console.error(`Error loading champion from API ${championId}:`, error)
+				const contextChampion = champions.find(
+					(champ) => champ.id === championId
+				)
+				contextChampion ? setChampion(contextChampion) : setError(true)
+			} finally {
+				setLoading(false)
+			}
 		}
 		loadChampion()
-	}, [championId])
+	}, [championId, champions])
 
-	if (loading) {
-		return <p>Loading...</p>
+	if (contextLoading || loading) {
+		return (
+			<Page title="Loading Champion...">
+				<div
+					className="flex center"
+					style={{ gap: "0.5rem", padding: "5rem 2.5rem" }}
+				>
+					<p>Loading champion data...</p>
+				</div>
+			</Page>
+		)
 	}
 
-	if (!champion) {
-		const champion = champions.find((champ) => champ.id === championId)
+	if (error || !champion) {
 		return (
-			<div>
-				<h1>{champion.name}</h1>
-				<h2>{champion.title}</h2>
-				<p>{champion.blurb}</p>
-			</div>
+			<Page title="Not Found">
+				<div
+					className="flex-column center"
+					style={{ gap: "1rem", padding: "5rem 2.5rem", textAlign: "center" }}
+				>
+					<h2>Champion not found!</h2>
+					<p>The champion "{championId}" does not exist or could not be loaded...</p>
+				</div>
+			</Page>
 		)
 	}
 

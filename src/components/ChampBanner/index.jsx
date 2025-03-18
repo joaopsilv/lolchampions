@@ -22,7 +22,7 @@ export default function ChampBanner({ champ }) {
 						<h2>{champ.title}</h2>
 						<h1>{champ.name}</h1>
 					</div>
-					<p>{champ.lore}</p>
+					<p>{champ.lore ? champ.lore : champ.blurb}</p>
 				</div>
 				<div className="flex" style={{ gap: "1rem" }}>
 					<MetaInfo type="role" roles={champ.tags} />
