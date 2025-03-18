@@ -1,0 +1,133 @@
+@use "../../assets/partials/mixins" as *;
+
+.banner {
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	.imgContainer {
+		@include absolute-fill(-1);
+		&::after {
+			content: "";
+			@include absolute-fill(1);
+			background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+		}
+		.img {
+			object-position: center top;
+		}
+	}
+	.back {
+		position: absolute;
+		z-index: 10;
+		top: 4.5rem;
+		left: 4.5rem;
+		color: var(--clr-white);
+		font-size: var(--fs-32);
+	}
+	.wrapper {
+		flex-grow: 1;
+		justify-content: center;
+		gap: 2rem;
+		padding: 0 5rem;
+		max-width: 700px;
+		position: relative;
+		z-index: 2;
+		.text {
+			gap: 1rem;
+			color: var(--clr-white);
+			div {
+				gap: 0.5rem;
+			}
+			h1 {
+				font-size: var(--fs-72);
+			}
+			h2 {
+				font-size: var(--fs-32);
+				color: var(--clr-acc-2);
+			}
+			p {
+				font-size: var(--fs-18);
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.banner {
+		overflow: auto;
+		gap: 2rem;
+		.imgContainer {
+			position: relative;
+			height: auto;
+			width: 100%;
+			&::after {
+				height: 100%;
+				z-index: 1;
+			}
+			.img {
+				position: relative;
+			}
+		}
+		.wrapper {
+			max-width: 100%;
+			justify-content: start;
+			.text {
+				h1 {
+					font-size: var(--fs-60);
+				}
+				h2 {
+					font-size: var(--fs-24);
+				}
+				p {
+					font-size: var(--fs-16);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.banner {
+		.wrapper {
+			padding: 0 3.5rem;
+			.text {
+				h1 {
+					font-size: var(--fs-52);
+				}
+			}
+		}
+		.back {
+			top: 3.5rem;
+			left: 3.5rem;
+		}
+	}
+}
+
+@media (max-width: 570px) {
+	.banner {
+		.wrapper {
+			.text {
+				h1 {
+					font-size: var(--fs-32);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 426px) {
+	.banner {
+		.wrapper {
+			padding: 0 2rem;
+			.text {
+				p {
+					font-size: var(--fs-14);
+				}
+			}
+		}
+		.back {
+			top: 2rem;
+			left: 2rem;
+			font-size: var(--fs-24);
+		}
+	}
+}

@@ -2,9 +2,10 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { fetchChampionById } from "../services/api"
 import { useChampions } from "../context/ChampionContext"
+import ChampBanner from "../components/ChampBanner"
 
 const Champion = () => {
-	const { champions } = useChampions()
+	const { champions, loading } = useChampions()
 	const { championId } = useParams()
 	const [champion, setChampion] = useState(null)
 
@@ -15,6 +16,10 @@ const Champion = () => {
 		}
 		loadChampion()
 	}, [championId])
+
+	if (loading) {
+		return <p>Loading...</p>
+	}
 
 	if (!champion) {
 		const champion = champions.find((champ) => champ.id === championId)
@@ -28,15 +33,9 @@ const Champion = () => {
 	}
 
 	return (
-		<div>
-			<h1>{champion.name}</h1>
-			<h2>{champion.title}</h2>
-			<p>{champion.lore}</p>
-			<img
-				src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_0.jpg`}
-				alt={champion.name}
-			/>
-		</div>
+		<>
+			<ChampBanner champ={champion} />
+		</>
 	)
 }
 

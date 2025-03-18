@@ -1,15 +1,12 @@
+@use "../../assets/partials/mixins" as *;
+
 .hero {
 	height: 100vh;
 	overflow: hidden;
 	position: relative;
 	&::after {
 		content: "";
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		z-index: -1;
+		@include absolute-fill(-1);
 		background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
 	}
 	h1 {
@@ -19,7 +16,6 @@
 		color: var(--clr-white);
 		span {
 			display: block;
-			letter-spacing: 2.5px;
 		}
 	}
 }

@@ -1,0 +1,51 @@
+.meta {
+	border: 2px solid var(--clr-acc-2);
+	padding: 0.5rem;
+	min-width: 130px;
+	min-height: 130px;
+	.box {
+		position: relative;
+		height: 100%;
+		gap: 1.5rem;
+		padding: 0.5rem;
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0px;
+			opacity: 0.5;
+			background-color: var(--clr-acc-1);
+		}
+		.icon,
+		.text {
+			z-index: 1;
+		}
+		.icon {
+			gap: 1rem;
+			%icon-base {
+				color: var(--clr-acc-2);
+				height: 32px;
+			}
+			.roleIcon {
+				@extend %icon-base;
+				width: 32px;
+			}
+			.diffIcon {
+				@extend %icon-base;
+				width: 48px;
+			}
+		}
+		.text {
+			gap: 0.5rem;
+			font-family: var(--ff-body);
+			font-size: var(--fs-10);
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			span:first-child {
+				color: var(--clr-white);
+			}
+			span:last-child {
+				color: var(--clr-acc-2);
+			}
+		}
+	}
+}

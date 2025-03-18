@@ -33,13 +33,15 @@ body {
 	background-color: var(--clr-black);
 }
 
-section{
-	padding: 0px 5rem;
+h1,
+h2 {
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-family: var(--ff-heading);
 }
 
-h1 {
-	text-transform: uppercase;
-	font-family: var(--ff-heading);
+p {
+	font-family: var(--ff-body);
 }
 
 // Scrollbar
@@ -77,6 +79,10 @@ h1 {
 	align-items: center;
 }
 
+.padding {
+	padding: 0px 5rem;
+}
+
 .img {
 	width: 100%;
 	height: 100%;
@@ -85,5 +91,6 @@ h1 {
 }
 .bg-img {
 	@extend .img;
+	inset: 0;
 	position: absolute;
 }
