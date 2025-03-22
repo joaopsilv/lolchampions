@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { fetchChampionById } from "../services/api"
 import { useChampions } from "../context/ChampionContext"
 import ChampBanner from "../components/ChampBanner"
+import ChampSkills from "../components/ChampSkills"
 import Page from "./Page"
 
 const Champion = () => {
@@ -60,7 +61,9 @@ const Champion = () => {
 					style={{ gap: "1rem", padding: "5rem 2.5rem", textAlign: "center" }}
 				>
 					<h2>Champion not found!</h2>
-					<p>The champion "{championId}" does not exist or could not be loaded...</p>
+					<p>
+						The champion "{championId}" does not exist or could not be loaded...
+					</p>
 				</div>
 			</Page>
 		)
@@ -68,7 +71,10 @@ const Champion = () => {
 
 	return (
 		<Page title={champion.name}>
-			<ChampBanner champ={champion} />
+			<main className="flex-column" style={{gap: "0"}}>
+				<ChampBanner champ={champion} />
+				<ChampSkills skills={champion.spells} passive={champion.passive} />
+			</main>
 		</Page>
 	)
 }

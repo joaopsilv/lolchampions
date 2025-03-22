@@ -1,0 +1,71 @@
+.skills {
+	padding: 2rem 5rem;
+	gap: 2rem;
+	h1 {
+		font-size: var(--fs-64);
+	}
+	.icons {
+		gap: 2rem;
+		flex-wrap: wrap;
+	}
+	.details {
+		text-align: center;
+		h2 {
+			font-size: var(--fs-24);
+			letter-spacing: 1.5px;
+			margin-bottom: 1rem;
+		}
+		span {
+			font-size: var(--fs-16);
+			font-family: var(--ff-body);
+			text-transform: uppercase;
+			color: var(--clr-white-opc);
+			margin-bottom: 0.5rem;
+		}
+		.description {
+			min-height: 104px;
+			p {
+				font-size: var(--fs-18);
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.skills {
+		h1 {
+			font-size: var(--fs-48);
+		}
+		.details {
+			h2 {
+				font-size: var(--fs-20);
+			}
+			span {
+				font-size: var(--fs-14);
+			}
+			p {
+				font-size: var(--fs-16);
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.skills {
+		padding: 2rem 3.5rem;
+	}
+}
+
+@media (max-width: 426px) {
+	.skills {
+		padding: 2rem;
+		.details {
+			span {
+				font-size: var(--fs-12);
+			}
+			p {
+				font-size: var(--fs-14);
+			}
+		}
+	}
+}
