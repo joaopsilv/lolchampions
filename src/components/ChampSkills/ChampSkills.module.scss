@@ -1,5 +1,4 @@
 .skills {
-	padding: 2rem 5rem;
 	gap: 2rem;
 	h1 {
 		font-size: var(--fs-64);
@@ -50,15 +49,8 @@
 	}
 }
 
-@media (max-width: 768px) {
-	.skills {
-		padding: 2rem 3.5rem;
-	}
-}
-
 @media (max-width: 426px) {
 	.skills {
-		padding: 2rem;
 		.details {
 			span {
 				font-size: var(--fs-12);

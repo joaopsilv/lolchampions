@@ -7,11 +7,11 @@
 		scale: 1.1;
 		cursor: pointer;
 	}
+	span,
 	img {
 		transition: var(--default-transition);
 	}
 	span {
-		@extend img;
 		position: absolute;
 		top: 50%;
 		left: 50%;

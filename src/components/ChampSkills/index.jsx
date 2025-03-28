@@ -1,6 +1,6 @@
 import { useState } from "react"
-import style from "./ChampSkills.module.scss"
 import AbilityIcon from "../AbilityIcon"
+import style from "./ChampSkills.module.scss"
 
 export default function ChampSkills({ skills, passive }) {
 	const [selected, setSelected] = useState(passive)
@@ -13,17 +13,12 @@ export default function ChampSkills({ skills, passive }) {
 
 	const cleanText = (text) => {
 		if (!text) return ""
-
-		// Remove all HTML tags using REGEX
 		let cleanedText = text.replace(/<[^>]*>/g, "").trim()
-
-		// Add a space after periods that have no space
-		// The regex looks for a period followed by a letter (no space between them)
 		return cleanedText.replace(/\.([A-Za-z])/g, ". $1")
 	}
 
 	return (
-		<section className={`flex-column center ${style.skills}`}>
+		<section className={`flex-column center padding ${style.skills}`}>
 			<h1>Abilities</h1>
 			<div className={`flex center ${style.icons}`}>
 				<AbilityIcon

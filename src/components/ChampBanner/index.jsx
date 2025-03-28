@@ -31,7 +31,7 @@ export default function ChampBanner({ champ }) {
 				/>
 			</div>
 			{!isDesktop && <BackLink />}
-			<div className={`flex-column ${style.wrapper}`}>
+			<div className={`flex-column padding ${style.wrapper}`}>
 				{isDesktop && <BackLink />}
 				<div className={`flex-column ${style.text}`}>
 					<div className="flex-column">

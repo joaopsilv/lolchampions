@@ -39,7 +39,7 @@ export default function ChampSkins({ champID, champName, skinList }) {
 	}
 
 	return (
-		<section className={`flex-column ${style.carousel}`}>
+		<section className={`flex-column padding ${style.carousel}`}>
 			<h1>Skins</h1>
 			<Swiper
 				onSwiper={(swiper) => {

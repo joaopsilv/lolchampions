@@ -88,10 +88,6 @@ p {
 	align-items: center;
 }
 
-.padding {
-	padding: 0px 5rem;
-}
-
 .img {
 	width: 100%;
 	height: 100%;
@@ -102,4 +98,18 @@ p {
 	@extend .img;
 	inset: 0;
 	position: absolute;
+}
+
+.padding {
+	padding: 2rem 5rem;
+}
+@media (max-width: 768px) {
+	.padding {
+		padding: 2rem 3.5rem;
+	}
+}
+@media (max-width: 426px) {
+	.padding {
+		padding: 2rem;
+	}
 }
