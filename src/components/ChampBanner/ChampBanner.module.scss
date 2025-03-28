@@ -16,12 +16,14 @@
 		}
 	}
 	.back {
-		position: absolute;
-		z-index: 10;
-		top: 4.5rem;
-		left: 4.5rem;
 		color: var(--clr-white);
 		font-size: var(--fs-32);
+		// &Absolute {
+		// 	z-index: 10;
+		// 	top: 4.5rem;
+		// 	left: 4.5rem;
+		// 	position: absolute;
+		// }
 	}
 	.wrapper {
 		flex-grow: 1;
@@ -88,6 +90,12 @@
 				}
 			}
 		}
+		.back{
+			z-index: 10;
+			top: 4.5rem;
+			left: 4.5rem;
+			position: absolute;
+		}
 	}
 }
 
@@ -102,8 +110,10 @@
 			}
 		}
 		.back {
-			top: 3.5rem;
-			left: 3.5rem;
+			// &Absolute {
+				top: 3.5rem;
+				left: 3.5rem;
+			// }
 		}
 	}
 }
@@ -131,9 +141,11 @@
 			}
 		}
 		.back {
-			top: 2rem;
-			left: 2rem;
-			font-size: var(--fs-24);
+			// &Absolute {
+				top: 2rem;
+				left: 2rem;
+				font-size: var(--fs-24);
+			// }
 		}
 	}
 }

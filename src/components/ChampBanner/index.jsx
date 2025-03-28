@@ -1,9 +1,25 @@
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { IoChevronBackOutline } from "react-icons/io5"
 import MetaInfo from "../MetaInfo"
 import style from "./ChampBanner.module.scss"
 
 export default function ChampBanner({ champ }) {
+	const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024)
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsDesktop(window.innerWidth > 1024)
+		}
+		window.addEventListener("resize", handleResize)
+	}, [])
+
+	const BackLink = () => (
+		<Link to="/" className={`${style.back} ${style.back}`}>
+			<IoChevronBackOutline />
+		</Link>
+	)
+
 	return (
 		<section className={`flex-column ${style.banner}`}>
 			<div className={style.imgContainer}>
@@ -13,10 +29,9 @@ export default function ChampBanner({ champ }) {
 					className={`bg-img ${style.img}`}
 				/>
 			</div>
-			<Link to="/" className={style.back}>
-				<IoChevronBackOutline />
-			</Link>
+			{!isDesktop && <BackLink />}
 			<div className={`flex-column ${style.wrapper}`}>
+				{isDesktop && <BackLink />}
 				<div className={`flex-column ${style.text}`}>
 					<div className="flex-column">
 						<h2>{champ.title}</h2>
