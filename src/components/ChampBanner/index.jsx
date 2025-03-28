@@ -12,6 +12,7 @@ export default function ChampBanner({ champ }) {
 			setIsDesktop(window.innerWidth > 1024)
 		}
 		window.addEventListener("resize", handleResize)
+		return () => window.removeEventListener("resize", handleResize)
 	}, [])
 
 	const BackLink = () => (

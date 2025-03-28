@@ -27,6 +27,7 @@ export default function ChampSkins({ champID, champName, skinList }) {
 		}
 		checkSlidesPerView()
 		window.addEventListener("resize", checkSlidesPerView)
+		return () => window.removeEventListener("resize", checkSlidesPerView)
 	}, [skinList.length])
 
 	const handleSlideChange = (swiper) => {
