@@ -1,3 +1,8 @@
+%icon-base {
+	color: var(--clr-acc-2);
+	height: 32px;
+}
+
 .meta {
 	border: 2px solid var(--clr-acc-2);
 	padding: 0.5rem;
@@ -21,10 +26,6 @@
 		}
 		.icon {
 			gap: 1rem;
-			%icon-base {
-				color: var(--clr-acc-2);
-				height: 32px;
-			}
 			.roleIcon {
 				@extend %icon-base;
 				width: 32px;

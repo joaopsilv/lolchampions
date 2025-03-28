@@ -1,13 +1,16 @@
+$transition-specs: var(--speed) ease-in-out;
+
 .icon {
 	padding: 0.5rem;
 	position: relative;
 	border: solid 2px var(--clr-acc-1);
-	transition: var(--speed) ease-in-out;
+	transition: $transition-specs;
 	&:hover {
 		scale: 1.1;
+		cursor: pointer;
 	}
 	img {
-		transition: var(--speed) ease;
+		transition: $transition-specs;
 	}
 	span {
 		@extend img;
@@ -41,7 +44,7 @@
 
 .inactive {
 	img {
-		filter: grayscale(100%) brightness(0.8) blur(2px);
+		filter: grayscale(100%) brightness(0.8) blur(2.5px);
 	}
 }
 

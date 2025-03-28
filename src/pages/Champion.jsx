@@ -4,6 +4,7 @@ import { fetchChampionById } from "../services/api"
 import { useChampions } from "../context/ChampionContext"
 import ChampBanner from "../components/ChampBanner"
 import ChampSkills from "../components/ChampSkills"
+import ChampSkins from "../components/ChampSkins"
 import Page from "./Page"
 
 const Champion = () => {
@@ -71,9 +72,14 @@ const Champion = () => {
 
 	return (
 		<Page title={champion.name}>
-			<main className="flex-column" style={{gap: "0"}}>
+			<main className="flex-column" style={{ gap: "0" }}>
 				<ChampBanner champ={champion} />
 				<ChampSkills skills={champion.spells} passive={champion.passive} />
+				<ChampSkins
+					skinList={champion.skins}
+					champID={champion.id}
+					champName={champion.name}
+				/>
 			</main>
 		</Page>
 	)

@@ -15,3 +15,11 @@
 	height: 100%;
 	z-index: $z-index;
 }
+
+@mixin gradient-carousel($position, $transparent-point: 15%) {
+	background: linear-gradient(
+		to #{$position},
+		var(--clr-black) 0%,
+		transparent #{$transparent-point}
+	);
+}
