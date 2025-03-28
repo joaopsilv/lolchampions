@@ -18,8 +18,8 @@ footer {
 	.social {
 		gap: 0.75rem;
 		svg {
+			transition: var(--default-transition);
 			font-size: var(--fs-32);
-			transition: scale var(--speed) ease-in-out;
 			&:hover {
 				scale: 0.9;
 			}

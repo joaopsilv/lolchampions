@@ -9,7 +9,7 @@
 		&::after {
 			content: "";
 			@include absolute-fill(1);
-			background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+			background: var(--default-gradient);
 		}
 		.img {
 			object-position: center top;
@@ -37,10 +37,15 @@
 			div {
 				gap: 0.5rem;
 			}
+			h1,
+			h2 {
+				text-shadow: var(--default-text-shadow);
+			}
 			h1 {
 				font-size: var(--fs-72);
 			}
 			h2 {
+				letter-spacing: 2.5px;
 				font-size: var(--fs-32);
 				color: var(--clr-acc-2);
 			}

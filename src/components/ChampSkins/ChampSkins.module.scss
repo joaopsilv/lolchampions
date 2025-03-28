@@ -56,7 +56,7 @@
 			}
 			img {
 				@extend %transition-effect;
-				filter: grayscale(100%) brightness(0.8) blur(2.5px);
+				filter: var(--default-filter);
 			}
 			span {
 				opacity: 0;
@@ -68,7 +68,7 @@
 				font-size: var(--fs-24);
 				color: var(--clr-acc-2);
 				letter-spacing: 1.5px;
-				text-shadow: 0 0 5px var(--clr-black);
+				text-shadow: var(--default-text-shadow);
 				@extend %transition-effect;
 			}
 		}

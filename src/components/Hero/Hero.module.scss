@@ -7,12 +7,12 @@
 	&::after {
 		content: "";
 		@include absolute-fill(-1);
-		background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+		background: var(--default-gradient);
 	}
 	h1 {
 		font-size: clamp(3rem, 8vw, 9rem);
 		text-align: center;
-		text-shadow: 2px 2px 10px var(--clr-black-opc);
+		text-shadow: var(--default-text-shadow);
 		color: var(--clr-white);
 		span {
 			display: block;
