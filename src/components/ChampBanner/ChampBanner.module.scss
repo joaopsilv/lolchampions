@@ -136,3 +136,13 @@
 		}
 	}
 }
+
+@media (max-width: 320px) {
+	.banner {
+		.wrapper {
+			div:last-child {
+				flex-direction: column;
+			}
+		}
+	}
+}
