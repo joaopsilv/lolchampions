@@ -2,7 +2,7 @@ import style from "./Scroll.module.scss"
 
 export default function Scroll() {
 	return (
-		<a href="#list" className={style.scroll}>
+		<a href="#search" className={style.scroll}>
 			<svg
 				width="100%"
 				height="100%"

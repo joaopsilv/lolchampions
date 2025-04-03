@@ -55,7 +55,6 @@
 	.banner {
 		height: fit-content;
 		overflow: visible;
-		gap: 2rem;
 		.imgContainer {
 			position: relative;
 			height: auto;
@@ -70,6 +69,7 @@
 		}
 		.wrapper {
 			max-width: 100%;
+			padding-block: 6.5rem 2rem;
 			justify-content: start;
 			.text {
 				h1 {

@@ -1,5 +1,6 @@
 .skills {
 	gap: 2rem;
+	padding-block: 6.5rem 2rem;
 	h1 {
 		font-size: var(--fs-64);
 	}
@@ -32,6 +33,7 @@
 
 @media (max-width: 1024px) {
 	.skills {
+		padding-block: 2rem;
 		h1 {
 			font-size: var(--fs-48);
 		}

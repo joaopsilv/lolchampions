@@ -101,15 +101,15 @@ p {
 }
 
 .padding {
-	padding: 2rem 5rem;
+	padding-inline: 5rem;
 }
 @media (max-width: 768px) {
 	.padding {
-		padding: 2rem 3.5rem;
+		padding-inline: 3.5rem;
 	}
 }
 @media (max-width: 426px) {
 	.padding {
-		padding: 2rem;
+		padding-inline: 2rem;
 	}
 }

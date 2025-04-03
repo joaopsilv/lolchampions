@@ -1,5 +1,6 @@
 .list {
 	grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
 	gap: 2rem;
-	padding: 5rem;
+	padding-block: 3rem 6.5rem;
+	padding-inline: 5rem;
 }
